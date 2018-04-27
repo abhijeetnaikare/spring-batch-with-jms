@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: trigger-batch-job-with-jms-inboud-channel-adapter
+
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/test
+
+  batch:
+    job:
+#      control which jobs to execute on startup, empty means all jobs
+      names:
+#      here we specify to not trigger jobs on startup, the default is true
+      enabled: false
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
+
+# if you don't define it will start an embedded instance
+  activemq:
+    broker-url: tcp://localhost:61616
